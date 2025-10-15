@@ -22,6 +22,7 @@ I started by moving the Omeka zip files to the web root and unzipping:
 
 ```bash
 sudo unzip omeka.zip
+
 Mistake 1 – Downloaded Omeka S Instead of Omeka Classic
 Then I moved the contents to the web root:
 
@@ -29,6 +30,7 @@ bash
 Copy code
 sudo mv omeka/* /var/www/html/
 sudo rm -rf omeka
+
 Mistake 2 – Permissions Adjustments Gone Wrong
 I followed advice from Google to set permissions:
 
@@ -72,7 +74,7 @@ This deleted everything, including WordPress.
 Downloaded Omeka S again. Still no luck.
 At this point, I had no working WordPress or Omeka.
 
-Troubleshooting WordPress
+Step 1: Troubleshooting WordPress
 I decided to reinstall WordPress.
 
 Checked requirements — all good. Installed additional PHP modules (already present). Restarted Apache and MySQL successfully.
@@ -105,7 +107,7 @@ Copy code
 sudo mv /var/www/html/wordpress /var/www/html/library
 But I still got an error. I realized my database name and username weren’t consistent — some were capitalized differently (“Kita” vs “kita”). After correcting these in Nano, the site finally loaded again. 🎉
 
-Reinstalling Omeka (Correctly This Time)
+Step 2: Reinstalling Omeka (Correctly This Time)
 Time for a fresh start with Omeka Classic.
 
 Updated Apache and verified dependencies:
